@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jobs - JobHub</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <a href="index.html">
+                        <i class="fas fa-briefcase"></i>
+                        JobHub
+                    </a>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="jobs.html" class="nav-link active">Jobs</a></li>
+                    <li><a href="companies.html" class="nav-link">Companies</a></li>
+                    <li><a href="salary-insights.html" class="nav-link">Salary Insights</a></li>
+                    <li><a href="career-advice.html" class="nav-link">Career Advice</a></li>
+                </ul>
+                <div class="nav-auth">
+                    <div class="location-display">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span id="user-location">San Francisco</span>
+                    </div>
+                    <div class="notification-bell">
+                        <i class="fas fa-bell"></i>
+                        <span class="notification-count">3</span>
+                    </div>
+                    <a href="login.html" class="btn btn-outline">Sign In</a>
+                    <a href="register.html" class="btn btn-primary">Sign Up</a>
+                </div>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Jobs Page Content -->
+    <main class="jobs-page">
+        <div class="container">
+            <!-- Page Header -->
+            <div class="page-header">
+                <h1>Find Your Perfect Job</h1>
+                <p>Discover thousands of opportunities from top companies worldwide</p>
+            </div>
+
+            <!-- Search and Filters -->
+            <div class="jobs-search-section">
+                <form class="search-form jobs-search">
+                    <div class="search-grid">
+                        <div class="search-field">
+                            <i class="fas fa-search"></i>
+                            <input type="text" placeholder="Job title, keywords, or company" name="search" id="job-search">
+                        </div>
+                        <div class="search-field">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <input type="text" placeholder="City or remote" name="location" id="location-search">
+                        </div>
+                        <button type="submit" class="btn btn-primary search-btn">
+                            <i class="fas fa-search"></i>
+                            Search
+                        </button>
+                    </div>
+                </form>
+
+                <!-- Filters -->
+                <div class="filters-section">
+                    <div class="filters-grid">
+                        <select name="category" class="filter-select">
+                            <option value="">All Categories</option>
+                            <option value="technology">Technology</option>
+                            <option value="design">Design</option>
+                            <option value="marketing">Marketing</option>
+                            <option value="finance">Finance</option>
+                            <option value="sales">Sales</option>
+                            <option value="education">Education</option>
+                        </select>
+
+                        <select name="job-type" class="filter-select">
+                            <option value="">Job Type</option>
+                            <option value="full-time">Full-time</option>
+                            <option value="part-time">Part-time</option>
+                            <option value="contract">Contract</option>
+                            <option value="freelance">Freelance</option>
+                            <option value="internship">Internship</option>
+                        </select>
+
+                        <select name="experience" class="filter-select">
+                            <option value="">Experience Level</option>
+                            <option value="entry">Entry Level (0-2 years)</option>
+                            <option value="mid">Mid Level (3-5 years)</option>
+                            <option value="senior">Senior Level (5+ years)</option>
+                            <option value="executive">Executive Level</option>
+                        </select>
+
+                        <select name="salary" class="filter-select">
+                            <option value="">Salary Range</option>
+                            <option value="0-50000">$0 - $50,000</option>
+                            <option value="50000-100000">$50,000 - $100,000</option>
+                            <option value="100000-150000">$100,000 - $150,000</option>
+                            <option value="150000+">$150,000+</option>
+                        </select>
+
+                        <div class="filter-checkboxes">
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="remote" value="true">
+                                <span class="checkmark"></span>
+                                Remote Only
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Results Summary -->
+            <div class="results-summary">
+                <div class="results-info">
+                    <span class="results-count">1,234 jobs found</span>
+                    <span class="results-location">in San Francisco, CA</span>
+                </div>
+                <div class="sort-options">
+                    <label for="sort-by">Sort by:</label>
+                    <select name="sort-by" id="sort-by" class="sort-select">
+                        <option value="relevance">Relevance</option>
+                        <option value="date">Date Posted</option>
+                        <option value="salary-high">Salary (High to Low)</option>
+                        <option value="salary-low">Salary (Low to High)</option>
+                        <option value="company">Company Name</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Job Listings -->
+            <div class="jobs-content">
+                <div class="jobs-list">
+                    <!-- Job Item 1 -->
+                    <div class="job-item featured" data-job-id="1">
+                        <div class="job-item-header">
+                            <img src="/placeholder.svg?height=60&width=60" alt="Google" class="company-logo">
+                            <div class="job-item-info">
+                                <h3>Senior Frontend Developer</h3>
+                                <div class="company-info">
+                                    <span class="company-name">Google</span>
+                                    <div class="company-rating">
+                                        <i class="fas fa-star"></i>
+                                        <span>4.5</span>
+                                        <span class="review-count">(1,234 reviews)</span>
+                                    </div>
+                                </div>
+                                <div class="job-meta">
+                                    <span><i class="fas fa-map-marker-alt"></i> San Francisco, CA</span>
+                                    <span><i class="fas fa-clock"></i> Full-time</span>
+                                    <span><i class="fas fa-calendar"></i> Posted 2 days ago</span>
+                                </div>
+                            </div>
+                            <div class="job-item-actions">
+                                <button class="btn-icon favorite-btn" title="Save Job">
+                                    <i class="far fa-heart"></i>
+                                </button>
+                                <div class="salary">$120K - $180K</div>
+                            </div>
+                        </div>
+
+                        <div class="job-item-content">
+                            <p class="job-description">
+                                We are looking for a Senior Frontend Developer to join our team and help build the next generation of web applications. You will work with cutting-edge technologies and collaborate with talented engineers.
+                            </p>
+                            
+                            <div class="job-tags">
+                                <span class="tag featured-tag">Featured</span>
+                                <span class="tag remote-tag">Remote</span>
+                                <span class="tag urgent-tag">Urgent Hiring</span>
+                            </div>
+
+                            <div class="skills">
+                                <span class="skill">React</span>
+                                <span class="skill">TypeScript</span>
+                                <span class="skill">Node.js</span>
+                                <span class="skill">GraphQL</span>
+                                <span class="skill">Redux</span>
+                                <span class="skill-more">+3 more</span>
+                            </div>
+                        </div>
+
+                        <div class="job-item-footer">
+                            <div class="job-stats">
+                                <span><i class="fas fa-users"></i> 127 applicants</span>
+                                <span><i class="fas fa-eye"></i> 1,543 views</span>
+                            </div>
+                            <div class="job-actions">
+                                <button class="btn btn-outline">View Details</button>
+                                <button class="btn btn-primary">Apply Now</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Job Item 2 -->
+                    <div class="job-item" data-job-id="2">
+                        <div class="job-item-header">
+                            <img src="/placeholder.svg?height=60&width=60" alt="Microsoft" class="company-logo">
+                            <div class="job-item-info">
+                                <h3>Product Manager</h3>
+                                <div class="company-info">
+                                    <span class="company-name">Microsoft</span>
+                                    <div class="company-rating">
+                                        <i class="fas fa-star"></i>
+                                        <span>4.3</span>
+                                        <span class="review-count">(892 reviews)</span>
+                                    </div>
+                                </div>
+                                <div class="job-meta">
+                                    <span><i class="fas fa-map-marker-alt"></i> Seattle, WA</span>
+                                    <span><i class="fas fa-clock"></i> Full-time</span>
+                                    <span><i class="fas fa-calendar"></i> Posted 1 day ago</span>
+                                </div>
+                            </div>
+                            <div class="job-item-actions">
+                                <button class="btn-icon favorite-btn" title="Save Job">
+                                    <i class="far fa-heart"></i>
+                                </button>
+                                <div class="salary">$140K - $200K</div>
+                            </div>
+                        </div>
+
+                        <div class="job-item-content">
+                            <p class="job-description">
+                                Join our product team to drive innovation and deliver exceptional user experiences across our platform. You will be responsible for defining product strategy and working with cross-functional teams.
+                            </p>
+                            
+                            <div class="job-tags">
+                                <span class="tag urgent-tag">Urgent</span>
+                            </div>
+
+                            <div class="skills">
+                                <span class="skill">Product Strategy</span>
+                                <span class="skill">Analytics</span>
+                                <span class="skill">Leadership</span>
+                                <span class="skill">Agile</span>
+                                <span class="skill">SQL</span>
+                            </div>
+                        </div>
+
+                        <div class="job-item-footer">
+                            <div class="job-stats">
+                                <span><i class="fas fa-users"></i> 89 applicants</span>
+                                <span><i class="fas fa-eye"></i> 987 views</span>
+                            </div>
+                            <div class="job-actions">
+                                <button class="btn btn-outline">View Details</button>
+                                <button class="btn btn-primary">Apply Now</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- More job items would go here -->
+                    
+                </div>
+
+                <!-- Pagination -->
+                <div class="pagination">
+                    <a href="#" class="pagination-btn disabled">
+                        <i class="fas fa-chevron-left"></i>
+                        Previous
+                    </a>
+                    <div class="pagination-numbers">
+                        <a href="#" class="pagination-number active">1</a>
+                        <a href="#" class="pagination-number">2</a>
+                        <a href="#" class="pagination-number">3</a>
+                        <span class="pagination-dots">...</span>
+                        <a href="#" class="pagination-number">25</a>
+                    </div>
+                    <a href="#" class="pagination-btn">
+                        Next
+                        <i class="fas fa-chevron-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fas fa-briefcase"></i>
+                        JobHub
+                    </div>
+                    <p>Your trusted partner in finding the perfect job opportunity.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="jobs.html">Jobs</a></li>
+                        <li><a href="companies.html">Companies</a></li>
+                        <li><a href="career-advice.html">Career Advice</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 JobHub. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

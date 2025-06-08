@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Salary Insights - Job Portal</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f2f2f2;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Navbar styles */
+    .navbar {
+      background-color: #0073b1;
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: white;
+    }
+
+    .navbar h1 {
+      margin: 0;
+      font-size: 22px;
+    }
+
+    .navbar ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      gap: 25px;
+    }
+
+    .navbar ul li {
+      display: inline;
+    }
+
+    .navbar ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .navbar ul li a:hover {
+      text-decoration: underline;
+    }
+
+    .container {
+      max-width: 950px;
+      margin: 40px auto;
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+      text-align: center;
+      color: #0073b1;
+      margin-bottom: 30px;
+    }
+
+    .category {
+      margin-bottom: 35px;
+      border-left: 5px solid #0073b1;
+      background-color: #f9f9f9;
+      padding: 20px;
+      border-radius: 8px;
+    }
+
+    .category h3 {
+      margin-top: 0;
+      color: #333;
+    }
+
+    .role {
+      margin-left: 20px;
+    }
+
+    .role p {
+      margin: 8px 0;
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    .highlight {
+      font-weight: bold;
+      color: #2c3e50;
+    }
+
+    .back-home {
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    .back-home a {
+      display: inline-block;
+      padding: 12px 25px;
+      font-size: 16px;
+      background-color: #0073b1;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      transition: background 0.3s ease;
+    }
+
+    .back-home a:hover {
+      background-color: #005f94;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <div class="navbar">
+    <h1>Online Job Portal</h1>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="jobs.html">Jobs</a></li>
+      <li><a href="salary-insights.html">Salary Insights</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+
+  <!-- Content -->
+  <div class="container">
+    <h2>💼 Salary Insights (Freshers vs Experienced)</h2>
+
+    <!-- Category: Technology -->
+    <div class="category">
+      <h3>🖥️ Technology</h3>
+      <div class="role">
+        <p><span class="highlight">Software Engineer:</span><br> Fresher: ₹4.5L | Experienced: ₹12L+</p>
+        <p><span class="highlight">Full Stack Developer:</span><br> Fresher: ₹5L | Experienced: ₹14L+</p>
+        <p><span class="highlight">Backend Developer:</span><br> Fresher: ₹4.2L | Experienced: ₹11L+</p>
+        <p><span class="highlight">Frontend Developer:</span><br> Fresher: ₹4L | Experienced: ₹10L+</p>
+        <p><span class="highlight">DevOps Engineer:</span><br> Fresher: ₹5L | Experienced: ₹15L+</p>
+      </div>
+    </div>
+
+    <!-- Category: Design -->
+    <div class="category">
+      <h3>🎨 Design</h3>
+      <div class="role">
+        <p><span class="highlight">UI/UX Designer:</span><br> Fresher: ₹3.5L | Experienced: ₹9L+</p>
+        <p><span class="highlight">Graphic Designer:</span><br> Fresher: ₹3L | Experienced: ₹7L+</p>
+        <p><span class="highlight">Product Designer:</span><br> Fresher: ₹4L | Experienced: ₹10L+</p>
+        <p><span class="highlight">Visual Designer:</span><br> Fresher: ₹3.2L | Experienced: ₹8L+</p>
+        <p><span class="highlight">Interaction Designer:</span><br> Fresher: ₹3.8L | Experienced: ₹9L+</p>
+      </div>
+    </div>
+
+    <!-- Category: Marketing -->
+    <div class="category">
+      <h3>📣 Marketing</h3>
+      <div class="role">
+        <p><span class="highlight">Digital Marketing Manager:</span><br> Fresher: ₹3.5L | Experienced: ₹10L+</p>
+        <p><span class="highlight">SEO Specialist:</span><br> Fresher: ₹2.8L | Experienced: ₹7.5L+</p>
+        <p><span class="highlight">Social Media Manager:</span><br> Fresher: ₹3.2L | Experienced: ₹8.5L+</p>
+        <p><span class="highlight">Content Marketer:</span><br> Fresher: ₹3L | Experienced: ₹9L+</p>
+        <p><span class="highlight">Email Marketer:</span><br> Fresher: ₹2.5L | Experienced: ₹6.5L+</p>
+      </div>
+    </div>
+
+    <!-- Category: Finance -->
+    <div class="category">
+      <h3>💰 Finance</h3>
+      <div class="role">
+        <p><span class="highlight">Financial Analyst:</span><br> Fresher: ₹4L | Experienced: ₹10L+</p>
+        <p><span class="highlight">Accountant:</span><br> Fresher: ₹3L | Experienced: ₹8L+</p>
+        <p><span class="highlight">Chartered Accountant:</span><br> Fresher: ₹6L | Experienced: ₹14L+</p>
+        <p><span class="highlight">Investment Banker:</span><br> Fresher: ₹7L | Experienced: ₹20L+</p>
+        <p><span class="highlight">Auditor:</span><br> Fresher: ₹3.8L | Experienced: ₹9.5L+</p>
+      </div>
+    </div>
+
+    <!-- Category: Sales -->
+    <div class="category">
+      <h3>📈 Sales</h3>
+      <div class="role">
+        <p><span class="highlight">Sales Executive:</span><br> Fresher: ₹2.5L | Experienced: ₹6.5L+</p>
+        <p><span class="highlight">Business Dev Executive:</span><br> Fresher: ₹3.2L | Experienced: ₹8.5L+</p>
+        <p><span class="highlight">Account Manager:</span><br> Fresher: ₹4L | Experienced: ₹10L+</p>
+        <p><span class="highlight">Sales Manager:</span><br> Fresher: ₹4.5L | Experienced: ₹12L+</p>
+        <p><span class="highlight">Inside Sales Rep:</span><br> Fresher: ₹2.8L | Experienced: ₹7L+</p>
+      </div>
+    </div>
+
+    <!-- Category: Education -->
+    <div class="category">
+      <h3>🎓 Education</h3>
+      <div class="role">
+        <p><span class="highlight">School Teacher:</span><br> Fresher: ₹2.5L | Experienced: ₹6L+</p>
+        <p><span class="highlight">College Professor:</span><br> Fresher: ₹4.5L | Experienced: ₹12L+</p>
+        <p><span class="highlight">Assistant Professor:</span><br> Fresher: ₹4L | Experienced: ₹10L+</p>
+        <p><span class="highlight">Online Tutor:</span><br> Fresher: ₹3L | Experienced: ₹7.5L+</p>
+        <p><span class="highlight">Instructional Designer:</span><br> Fresher: ₹4L | Experienced: ₹9.5L+</p>
+      </div>
+    </div>
+
+    <!-- Back to Home Button -->
+    <div class="back-home">
+      <a href="index.html">⬅️ Back to Home</a>
+    </div>
+
+  </div>
+
+</body>
+</html>

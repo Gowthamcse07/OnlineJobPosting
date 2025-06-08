@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Online Job Portal - Job Search</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f0f2f5;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      min-height: 100vh;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: #333;
+    }
+
+    .container {
+      background: #fff;
+      padding: 30px 40px;
+      border-radius: 8px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      max-width: 600px;
+      width: 100%;
+      text-align: center;
+    }
+
+    h1 {
+      margin-bottom: 20px;
+      color: #222;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    label {
+      text-align: left;
+      font-weight: 600;
+      margin-bottom: 5px;
+      font-size: 0.9rem;
+      color: #555;
+    }
+
+    input[type="text"] {
+      padding: 10px 15px;
+      font-size: 1rem;
+      border: 1.8px solid #ccc;
+      border-radius: 5px;
+      transition: border-color 0.3s;
+    }
+
+    input[type="text"]:focus {
+      border-color: #4a90e2;
+      outline: none;
+    }
+
+    button {
+      padding: 12px;
+      background-color: #4a90e2;
+      color: white;
+      font-weight: 700;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: background-color 0.3s;
+      margin-top: 10px;
+    }
+
+    button:hover {
+      background-color: #357abd;
+    }
+
+    #jobResults {
+      margin-top: 30px;
+      text-align: left;
+      max-height: 350px;
+      overflow-y: auto;
+    }
+
+    .job-item {
+      border-bottom: 1px solid #ddd;
+      padding: 15px 0;
+    }
+
+    .job-item:last-child {
+      border-bottom: none;
+    }
+
+    .job-title {
+      font-weight: 700;
+      color: #222;
+      margin-bottom: 8px;
+      font-size: 1.1rem;
+    }
+
+    .job-company,
+    .job-locations {
+      font-size: 0.95rem;
+      color: #555;
+    }
+
+    .job-locations {
+      margin-top: 5px;
+    }
+
+    .locations-list {
+      margin-top: 40px;
+      background: #fff;
+      padding: 20px 30px;
+      border-radius: 8px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+      max-width: 600px;
+      width: 100%;
+    }
+
+    .locations-list h2 {
+      margin-bottom: 15px;
+      font-weight: 700;
+      color: #4a90e2;
+      text-align: center;
+    }
+
+    .locations-list ul {
+      list-style: none;
+      padding-left: 0;
+      columns: 2;
+      column-gap: 20px;
+    }
+
+    .locations-list li {
+      padding: 5px 0;
+      font-size: 0.95rem;
+      color: #444;
+    }
+
+    @media (max-width: 480px) {
+      .locations-list ul {
+        columns: 1;
+      }
+    }
+
+    .back-button-container {
+      margin: 30px 0;
+      text-align: center;
+    }
+
+    .back-button {
+      background-color: #777;
+    }
+
+    .back-button:hover {
+      background-color: #444;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Online Job Portal - Search Jobs</h1>
+
+    <form id="jobSearchForm">
+      <label for="keyword">Job Keyword</label>
+      <input type="text" id="keyword" name="keyword" placeholder="e.g., developer, designer" />
+
+      <label for="location">Location</label>
+      <input type="text" id="location" name="location" placeholder="e.g., New York, Remote" />
+
+      <button type="submit">Search Jobs</button>
+    </form>
+
+    <div id="jobResults"></div>
+  </div>
+
+  <div class="locations-list">
+    <h2>Available Job Locations</h2>
+    <ul id="allLocations">
+      <!-- Locations will appear here -->
+    </ul>
+  </div>
+
+  <div class="back-button-container">
+    <button class="back-button" onclick="goBack()">← Back to Home</button>
+  </div>
+
+  <script>
+    const jobs = [
+      {
+        title: 'Frontend Developer',
+        company: 'TechCorp',
+        locations: ['New York', 'Boston', 'Chicago', 'San Francisco', 'Austin', 'Remote']
+      },
+      {
+        title: 'Backend Developer',
+        company: 'WebSolutions',
+        locations: ['San Francisco', 'Seattle', 'Denver', 'Austin', 'Remote']
+      },
+      {
+        title: 'Graphic Designer',
+        company: 'DesignPro',
+        locations: ['Remote', 'Los Angeles', 'Chicago', 'Miami', 'Boston']
+      },
+      {
+        title: 'Marketing Manager',
+        company: 'MarketStar',
+        locations: ['Chicago', 'New York', 'Dallas', 'Atlanta', 'Remote']
+      },
+      {
+        title: 'Sales Executive',
+        company: 'SalesForce',
+        locations: ['Boston', 'New York', 'San Francisco', 'Houston', 'Remote']
+      },
+      {
+        title: 'Finance Analyst',
+        company: 'FinTech',
+        locations: ['New York', 'Chicago', 'San Francisco', 'Seattle', 'Remote']
+      },
+      {
+        title: 'UI/UX Designer',
+        company: 'CreativeInc',
+        locations: ['Seattle', 'Austin', 'Denver', 'Remote', 'Boston']
+      },
+      {
+        title: 'DevOps Engineer',
+        company: 'CloudWorks',
+        locations: ['Austin', 'San Francisco', 'New York', 'Remote', 'Chicago']
+      },
+      {
+        title: 'Content Writer',
+        company: 'WriteGood',
+        locations: ['Remote', 'New York', 'Los Angeles', 'Chicago', 'Boston']
+      },
+      {
+        title: 'Project Manager',
+        company: 'BuildIt',
+        locations: ['Denver', 'Chicago', 'New York', 'Austin', 'Remote']
+      }
+    ];
+
+    // Render unique locations from all job locations
+    function renderLocations() {
+      const locationSet = new Set();
+      jobs.forEach(job => {
+        job.locations.forEach(loc => locationSet.add(loc));
+      });
+      const allLocations = Array.from(locationSet).sort();
+      const locationList = document.getElementById('allLocations');
+      locationList.innerHTML = '';
+
+      allLocations.forEach(loc => {
+        const li = document.createElement('li');
+        li.textContent = loc;
+        locationList.appendChild(li);
+      });
+    }
+
+    renderLocations();
+
+    document.getElementById('jobSearchForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const keyword = document.getElementById('keyword').value.toLowerCase().trim();
+      const location = document.getElementById('location').value.toLowerCase().trim();
+
+      const filteredJobs = jobs.filter(job => {
+        const matchesKeyword = keyword === '' || job.title.toLowerCase().includes(keyword);
+        const matchesLocation = location === '' || job.locations.some(loc => loc.toLowerCase().includes(location));
+        return matchesKeyword && matchesLocation;
+      });
+
+      const resultsDiv = document.getElementById('jobResults');
+      resultsDiv.innerHTML = '';
+
+      if (filteredJobs.length === 0) {
+        resultsDiv.innerHTML = '<p>No jobs found for your search.</p>';
+        return;
+      }
+
+      filteredJobs.forEach(job => {
+        const jobDiv = document.createElement('div');
+        jobDiv.className = 'job-item';
+
+        // Join multiple locations with <br> for new line
+        const locationsHtml = job.locations.map(loc => `<div>${loc}</div>`).join('');
+
+        jobDiv.innerHTML = `
+          <div class="job-title">${job.title}</div>
+          <div class="job-company"><strong>Company:</strong> ${job.company}</div>
+          <div class="job-locations"><strong>Locations:</strong><br>${locationsHtml}</div>
+        `;
+
+        resultsDiv.appendChild(jobDiv);
+      });
+    });
+
+    function goBack() {
+      // You can replace this with your actual home page link if needed
+      window.location.href = 'index.html'; 
+    }
+  </script>
+</body>
+</html>

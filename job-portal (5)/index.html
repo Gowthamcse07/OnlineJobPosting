@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JobHub - Find Your Dream Job</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <a href="index.html">
+                        <i class="fas fa-briefcase"></i>
+                        JobHub
+                    </a>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link active">Home</a></li>
+                    <li><a href="jobs.html" class="nav-link">Jobs</a></li>
+                    <li><a href="companies.html" class="nav-link">Companies</a></li>
+                    <li><a href="salary-insights.html" class="nav-link">Salary Insights</a></li>
+                    <li><a href="career-advice.html" class="nav-link">Career Advice</a></li>
+                </ul>
+                <div class="nav-auth">
+                    <div class="location-display">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <a href="job-search.html">Job Search</a>
+                         <span id="user-location">Location</span>
+                    </div>
+                    <div class="notification-bell">
+                        <i class="fas fa-bell"></i>
+                        <span class="notification-count">3</span>
+                    </div>
+                    <a href="login.html" class="btn btn-outline">Sign In</a>
+                    <a href="register.html" class="btn btn-primary">Sign Up</a>
+                    <a href="update-profile.html" class="btn btn-outline">Update Profile</a>
+                </div>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-background">
+            <div class="hero-animation"></div>
+        </div>
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title">
+                        Find Your <span class="gradient-text">Dream Job</span> Today
+                    </h1>
+                    <p class="hero-description">
+                        Discover thousands of job opportunities from top companies worldwide. 
+                        Your next career move starts here with our AI-powered job matching platform.
+                    </p>
+                    
+                    <!-- Search Form -->
+                    <form class="search-form hero-search">
+                        <div class="search-grid">
+                            <div class="search-field">
+                                <i class="fas fa-search"></i>
+                                <input type="text" placeholder="Job title, keywords, or company" name="search" id="job-search">
+                                <div class="autocomplete-dropdown" id="search-suggestions"></div>
+                            </div>
+                            <div class="search-field">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <input type="text" placeholder="City or remote" name="location" id="location-search">
+                            </div>
+                            <button type="submit" class="btn btn-primary search-btn">
+                                <i class="fas fa-search"></i>
+                                Search Jobs
+                            </button>
+                        </div>
+                    </form>
+
+                    <!-- Stats -->
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <div class="stat-number">50,000+</div>
+                            <div class="stat-label">Active Jobs</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">10,000+</div>
+                            <div class="stat-label">Companies</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">1M+</div>
+                            <div class="stat-label">Job Seekers</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="hero-image">
+                    <img src="job image " alt="job image " />
+                    <div class="floating-notification">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Job Categories -->
+    <section class="categories">
+        <div class="container">
+            <div class="section-header">
+                <h2>Popular Job Categories</h2>
+                <p>Explore opportunities across different industries</p>
+            </div>
+            
+            <div class="categories-grid">
+                <div class="category-card" data-category="technology">
+                    <div class="category-icon bg-blue">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>Technology</h3>
+                    <p>5,234 jobs available</p>
+                    <div class="category-arrow">
+                        <span>Explore jobs</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                </div>
+                
+                <div class="category-card" data-category="design">
+                    <div class="category-icon bg-purple">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <h3>Design</h3>
+                    <p>2,789 jobs available</p>
+                    <div class="category-arrow">
+                        <span>Explore jobs</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                </div>
+                
+                <div class="category-card" data-category="marketing">
+                    <div class="category-icon bg-green">
+                        <i class="fas fa-megaphone"></i>
+                    </div>
+                    <h3>Marketing</h3>
+                    <p>3,456 jobs available</p>
+                    <div class="category-arrow">
+                        <span>Explore jobs</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                </div>
+                
+                <div class="category-card" data-category="finance">
+                    <div class="category-icon bg-yellow">
+                        <i class="fas fa-dollar-sign"></i>
+                    </div>
+                    <h3>Finance</h3>
+                    <p>4,123 jobs available</p>
+                    <div class="category-arrow">
+                        <span>Explore jobs</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                </div>
+                
+                <div class="category-card" data-category="sales">
+                    <div class="category-icon bg-red">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Sales</h3>
+                    <p>3,890 jobs available</p>
+                    <div class="category-arrow">
+                        <span>Explore jobs</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                </div>
+                
+                <div class="category-card" data-category="education">
+                    <div class="category-icon bg-indigo">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3>Education</h3>
+                    <p>2,567 jobs available</p>
+                    <div class="category-arrow">
+                        <span>Explore jobs</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Jobs -->
+    <section class="featured-jobs">
+        <div class="container">
+            <div class="section-header-flex">
+                <div class="section-header">
+                    <h2>Featured Jobs</h2>
+                    <p>Hand-picked opportunities from top companies</p>
+                </div>
+                <a href="jobs.html" class="btn btn-primary">
+                    View All Jobs
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+            
+            <div class="jobs-grid">
+                <div class="job-card featured" data-job-id="1">
+                    <div class="job-header">
+                        <img src="/google2.png" alt="Google" class="company-logo">
+                        <div class="job-info">
+                            <h3>Senior Frontend Developer</h3>
+                            <div class="company-info">
+                                <span class="company-name">Google</span>
+                                <div class="company-rating">
+                                    <i class="fas fa-star"></i>
+                                    <span>4.5</span>
+                                </div>
+                            </div>
+                            <div class="job-meta">
+                                <span><i class="fas fa-map-marker-alt"></i> San Francisco, CA</span>
+                                <span><i class="fas fa-clock"></i> Full-time</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="job-details">
+                        <div class="salary-tags">
+                            <div class="salary">$120,000 - $180,000</div>
+                            <div class="job-tags">
+                                <span class="tag featured-tag">Featured</span>
+                                <span class="tag remote-tag">Remote</span>
+                            </div>
+                        </div>
+                        
+                        <div class="skills">
+                            <span class="skill">React</span>
+                            <span class="skill">TypeScript</span>
+                            <span class="skill">Node.js</span>
+                            <span class="skill-more">+3 more</span>
+                        </div>
+                    </div>
+                    
+                    <div class="job-footer">
+                        <span class="posted-date">Posted 2 days ago</span>
+                        <div class="job-actions">
+                            <span class="view-details">View Details</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="job-card" data-job-id="2">
+                    <div class="job-header">
+                        <img src="/Microsoft.webp" alt="Microsoft" class="company-logo">
+                        <div class="job-info">
+                            <h3>Product Manager</h3>
+                            <div class="company-info">
+                                <span class="company-name">Microsoft</span>
+                                <div class="company-rating">
+                                    <i class="fas fa-star"></i>
+                                    <span>4.3</span>
+                                </div>
+                            </div>
+                            <div class="job-meta">
+                                <span><i class="fas fa-map-marker-alt"></i> Seattle, WA</span>
+                                <span><i class="fas fa-clock"></i> Full-time</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="job-details">
+                        <div class="salary-tags">
+                            <div class="salary">$140,000 - $200,000</div>
+                            <div class="job-tags">
+                                <span class="tag urgent-tag">Urgent</span>
+                            </div>
+                        </div>
+                        
+                        <div class="skills">
+                            <span class="skill">Strategy</span>
+                            <span class="skill">Analytics</span>
+                            <span class="skill">Leadership</span>
+                        </div>
+                    </div>
+                    
+                    <div class="job-footer">
+                        <span class="posted-date">Posted 1 day ago</span>
+                        <div class="job-actions">
+                            <span class="view-details">View Details</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="job-card" data-job-id="3">
+                    <div class="job-header">
+                        <img src="/apple.jpg" alt="Apple" class="company-logo">
+                        <div class="job-info">
+                            <h3>UX Designer</h3>
+                            <div class="company-info">
+                                <span class="company-name">Apple</span>
+                                <div class="company-rating">
+                                    <i class="fas fa-star"></i>
+                                    <span>4.6</span>
+                                </div>
+                            </div>
+                            <div class="job-meta">
+                                <span><i class="fas fa-map-marker-alt"></i> Cupertino, CA</span>
+                                <span><i class="fas fa-clock"></i> Full-time</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="job-details">
+                        <div class="salary-tags">
+                            <div class="salary">$110,000 - $160,000</div>
+                            <div class="job-tags">
+                                <span class="tag featured-tag">Featured</span>
+                                <span class="tag remote-tag">Remote</span>
+                            </div>
+                        </div>
+                        
+                        <div class="skills">
+                            <span class="skill">Figma</span>
+                            <span class="skill">Prototyping</span>
+                            <span class="skill">Research</span>
+                        </div>
+                    </div>
+                    
+                    <div class="job-footer">
+                        <span class="posted-date">Posted 3 days ago</span>
+                        <div class="job-actions">
+                            <span class="view-details">View Details</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="job-card" data-job-id="4">
+                    <div class="job-header">
+                        <img src="/netflix.jpg" alt="Netflix" class="company-logo">
+                        <div class="job-info">
+                            <h3>Data Scientist</h3>
+                            <div class="company-info">
+                                <span class="company-name">Netflix</span>
+                                <div class="company-rating">
+                                    <i class="fas fa-star"></i>
+                                    <span>4.4</span>
+                                </div>
+                            </div>
+                            <div class="job-meta">
+                                <span><i class="fas fa-map-marker-alt"></i> Los Gatos, CA</span>
+                                <span><i class="fas fa-clock"></i> Full-time</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="job-details">
+                        <div class="salary-tags">
+                            <div class="salary">$130,000 - $190,000</div>
+                            <div class="job-tags">
+                                <span class="tag remote-tag">Remote</span>
+                            </div>
+                        </div>
+                        
+                        <div class="skills">
+                            <span class="skill">Python</span>
+                            <span class="skill">Machine Learning</span>
+                            <span class="skill">SQL</span>
+                        </div>
+                    </div>
+                    
+                    <div class="job-footer">
+                        <span class="posted-date">Posted 4 days ago</span>
+                        <div class="job-actions">
+                            <span class="view-details">View Details</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="job-card" data-job-id="5">
+                    <div class="job-header">
+                        <img src="/spotify.svg" alt="Spotify" class="company-logo">
+                        <div class="job-info">
+                            <h3>Backend Engineer</h3>
+                            <div class="company-info">
+                                <span class="company-name">Spotify</span>
+                                <div class="company-rating">
+                                    <i class="fas fa-star"></i>
+                                    <span>4.2</span>
+                                </div>
+                            </div>
+                            <div class="job-meta">
+                                <span><i class="fas fa-map-marker-alt"></i> New York, NY</span>
+                                <span><i class="fas fa-clock"></i> Full-time</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="job-details">
+                        <div class="salary-tags">
+                            <div class="salary">$115,000 - $170,000</div>
+                            <div class="job-tags">
+                                <span class="tag">Hybrid</span>
+                            </div>
+                        </div>
+                        
+                        <div class="skills">
+                            <span class="skill">Java</span>
+                            <span class="skill">Microservices</span>
+                            <span class="skill">AWS</span>
+                        </div>
+                    </div>
+                    
+                    <div class="job-footer">
+                        <span class="posted-date">Posted 5 days ago</span>
+                        <div class="job-actions">
+                            <span class="view-details">View Details</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="job-card" data-job-id="6">
+                    <div class="job-header">
+                        <img src="/Tesla-1.png" alt="Tesla" class="company-logo">
+                        <div class="job-info">
+                            <h3>DevOps Engineer</h3>
+                            <div class="company-info">
+                                <span class="company-name">Tesla</span>
+                                <div class="company-rating">
+                                    <i class="fas fa-star"></i>
+                                    <span>4.1</span>
+                                </div>
+                            </div>
+                            <div class="job-meta">
+                                <span><i class="fas fa-map-marker-alt"></i> Austin, TX</span>
+                                <span><i class="fas fa-clock"></i> Full-time</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="job-details">
+                        <div class="salary-tags">
+                            <div class="salary">$125,000 - $175,000</div>
+                            <div class="job-tags">
+                                <span class="tag urgent-tag">Urgent</span>
+                            </div>
+                        </div>
+                        
+                        <div class="skills">
+                            <span class="skill">Docker</span>
+                            <span class="skill">Kubernetes</span>
+                            <span class="skill">CI/CD</span>
+                        </div>
+                    </div>
+                    
+                    <div class="job-footer">
+                        <span class="posted-date">Posted 1 week ago</span>
+                        <div class="job-actions">
+                            <span class="view-details">View Details</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <div class="section-header">
+                <h2>Why Choose JobHub?</h2>
+                <p>Advanced features to accelerate your job search</p>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h3>Smart Job Matching</h3>
+                    <p>Our AI-powered algorithm matches you with jobs that fit your skills and preferences.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3>Instant Applications</h3>
+                    <p>Apply to multiple jobs with one click using your saved profile and resume.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-target"></i>
+                    </div>
+                    <h3>Personalized Recommendations</h3>
+                    <p>Get job recommendations tailored to your experience and career goals.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <h3>Career Growth Tracking</h3>
+                    <p>Track your career progress and get insights on skill development.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="how-it-works">
+        <div class="container">
+            <div class="section-header">
+                <h2>How It Works</h2>
+                <p>Get hired in 4 simple steps</p>
+            </div>
+            
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <div class="step-icon">
+                        <i class="fas fa-user-plus"></i>
+                    </div>
+                    <h3>Create Your Profile</h3>
+                    <p>Build a comprehensive profile showcasing your skills and experience.</p>
+                </div>
+                
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <div class="step-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h3>Discover Opportunities</h3>
+                    <p>Browse thousands of jobs from top companies worldwide.</p>
+                </div>
+                
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <div class="step-icon">
+                        <i class="fas fa-paper-plane"></i>
+                    </div>
+                    <h3>Apply with Confidence</h3>
+                    <p>Submit applications and track your progress in real-time.</p>
+                </div>
+                
+                <div class="step-card">
+                    <div class="step-number">4</div>
+                    <div class="step-icon">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <h3>Land Your Dream Job</h3>
+                    <p>Connect with employers and start your new career journey.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Top Companies -->
+    <section class="top-companies">
+        <div class="container">
+            <div class="section-header">
+                <h2>Top Companies Hiring</h2>
+                <p>Join thousands of professionals at leading companies</p>
+            </div>
+            
+            <div class="companies-grid">
+                <div class="company-card">
+                    <img src="/google2.png" alt="Google" class="company-logo">
+                    <h3>Google</h3>
+                    <p>234 open jobs</p>
+                    <div class="company-rating">
+                        <i class="fas fa-star"></i>
+                        <span>4.5</span>
+                    </div>
+                </div>
+                
+                <div class="company-card">
+                    <img src="/Microsoft.webp" alt="Microsoft" class="company-logo">
+                    <h3>Microsoft</h3>
+                    <p>189 open jobs</p>
+                    <div class="company-rating">
+                        <i class="fas fa-star"></i>
+                        <span>4.3</span>
+                    </div>
+                </div>
+                
+                <div class="company-card">
+                    <img src="/apple.jpg" alt="Apple" class="company-logo">
+                    <h3>Apple</h3>
+                    <p>156 open jobs</p>
+                    <div class="company-rating">
+                        <i class="fas fa-star"></i>
+                        <span>4.6</span>
+                    </div>
+                </div>
+                
+                <div class="company-card">
+                    <img src="/netflix.jpg" alt="Netflix" class="company-logo">
+                    <h3>Netflix</h3>
+                    <p>78 open jobs</p>
+                    <div class="company-rating">
+                        <i class="fas fa-star"></i>
+                        <span>4.4</span>
+                    </div>
+                </div>
+                
+                <div class="company-card">
+                    <img src="/spotify.svg" alt="Spotify" class="company-logo">
+                    <h3>Spotify</h3>
+                    <p>45 open jobs</p>
+                    <div class="company-rating">
+                        <i class="fas fa-star"></i>
+                        <span>4.2</span>
+                    </div>
+                </div>
+                
+                <div class="company-card">
+                    <img src="/Tesla-1.png" alt="Tesla" class="company-logo">
+                    <h3>Tesla</h3>
+                    <p>92 open jobs</p>
+                    <div class="company-rating">
+                        <i class="fas fa-star"></i>
+                        <span>4.1</span>
+                    </div>
+                </div>
+                
+                <div class="company-card">
+                    <img src="/amazon.jpg" alt="Amazon" class="company-logo">
+                    <h3>Amazon</h3>
+                    <p>312 open jobs</p>
+                    <div class="company-rating">
+                        <i class="fas fa-star"></i>
+                        <span>4.0</span>
+                    </div>
+                </div>
+                
+                <div class="company-card">
+                    <img src="/meta.png" alt="Meta" class="company-logo">
+                    <h3>Meta</h3>
+                    <p>167 open jobs</p>
+                    <div class="company-rating">
+                        <i class="fas fa-star"></i>
+                        <span>4.2</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Find Your Dream Job?</h2>
+                <p>Join millions of job seekers who have found their perfect career match through our platform.</p>
+                <div class="cta-buttons">
+                    <a href="register.html" class="btn btn-white">
+                        <i class="fas fa-user-plus"></i>
+                        Get Started Free
+                    </a>
+                    <a href="jobs.html" class="btn btn-outline-white">
+                        <i class="fas fa-search"></i>
+                        Browse Jobs
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fas fa-briefcase"></i>
+                        JobHub
+                    </div>
+                    <p>Your trusted partner in finding the perfect job opportunity. Connect with top employers and advance your career.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>For Job Seekers</h4>
+                    <ul>
+                        <li><a href="jobs.html">Browse Jobs</a></li>
+                        <li><a href="companies.html">Companies</a></li>
+                        <li><a href="salary-insights.html">Salary Insights</a></li>
+                        <li><a href="career-advice.html">Career Advice</a></li>
+                        <li><a href="resume-builder.html">Resume Builder</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>For Employers</h4>
+                    <ul>
+                        <li><a href="post-job.html">Post a Job</a></li>
+                        <li><a href="browse-resumes.html">Browse Resumes</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                        <li><a href="employer-resources.html">Resources</a></li>
+                        <li><a href="recruitment-solutions.html">Solutions</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="terms.html">Terms of Service</a></li>
+                        <li><a href="help.html">Help Center</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 JobHub. All rights reserved. Made with ❤️ for job seekers worldwide.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
